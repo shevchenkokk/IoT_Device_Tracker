@@ -1,0 +1,4 @@
+#Mon Oct 02 01:50:39 MSK 2023
+base.0=/Users/kirill/Documents/IoT_Device_Tracker/app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
