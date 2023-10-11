@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:fixnum/fixnum.dart';
+import '../client/client.dart';
 import 'register.dart';
+import 'groups_page.dart';
 
 class LoginPage extends StatelessWidget {
+  final Client client;
+
+  LoginPage({required this.client});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +32,12 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  // Реализуйте здесь логику аутентификации и переход на следующий экран
+                onPressed: () async {
+                  var groups = await client.fetchGroups(Int64(1));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GroupsPage(client: client, groups: groups)), // GroupsPage - новый экран для списка групп
+                  );
                 },
                 child: Text('Войти'),
               ),

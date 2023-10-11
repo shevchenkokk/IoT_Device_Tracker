@@ -9,27 +9,29 @@
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class ToUpperRequest extends $pb.GeneratedMessage {
-  factory ToUpperRequest({
-    $core.String? inputString,
+import 'google/protobuf/timestamp.pb.dart' as $1;
+
+class GetDeviceGroupsRequest extends $pb.GeneratedMessage {
+  factory GetDeviceGroupsRequest({
+    $fixnum.Int64? userId,
   }) {
     final $result = create();
-    if (inputString != null) {
-      $result.inputString = inputString;
+    if (userId != null) {
+      $result.userId = userId;
     }
     return $result;
   }
-  ToUpperRequest._() : super();
-  factory ToUpperRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ToUpperRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetDeviceGroupsRequest._() : super();
+  factory GetDeviceGroupsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDeviceGroupsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ToUpperRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'inputString')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDeviceGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -37,49 +39,69 @@ class ToUpperRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ToUpperRequest clone() => ToUpperRequest()..mergeFromMessage(this);
+  GetDeviceGroupsRequest clone() => GetDeviceGroupsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ToUpperRequest copyWith(void Function(ToUpperRequest) updates) => super.copyWith((message) => updates(message as ToUpperRequest)) as ToUpperRequest;
+  GetDeviceGroupsRequest copyWith(void Function(GetDeviceGroupsRequest) updates) => super.copyWith((message) => updates(message as GetDeviceGroupsRequest)) as GetDeviceGroupsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ToUpperRequest create() => ToUpperRequest._();
-  ToUpperRequest createEmptyInstance() => create();
-  static $pb.PbList<ToUpperRequest> createRepeated() => $pb.PbList<ToUpperRequest>();
+  static GetDeviceGroupsRequest create() => GetDeviceGroupsRequest._();
+  GetDeviceGroupsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDeviceGroupsRequest> createRepeated() => $pb.PbList<GetDeviceGroupsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ToUpperRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ToUpperRequest>(create);
-  static ToUpperRequest? _defaultInstance;
+  static GetDeviceGroupsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDeviceGroupsRequest>(create);
+  static GetDeviceGroupsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get inputString => $_getSZ(0);
+  $fixnum.Int64 get userId => $_getI64(0);
   @$pb.TagNumber(1)
-  set inputString($core.String v) { $_setString(0, v); }
+  set userId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInputString() => $_has(0);
+  $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInputString() => clearField(1);
+  void clearUserId() => clearField(1);
 }
 
-class ToUpperResponse extends $pb.GeneratedMessage {
-  factory ToUpperResponse({
-    $core.String? convertedString,
+class DeviceGroupData extends $pb.GeneratedMessage {
+  factory DeviceGroupData({
+    $fixnum.Int64? id,
+    $core.String? name,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+    $core.String? description,
   }) {
     final $result = create();
-    if (convertedString != null) {
-      $result.convertedString = convertedString;
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (description != null) {
+      $result.description = description;
     }
     return $result;
   }
-  ToUpperResponse._() : super();
-  factory ToUpperResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ToUpperResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DeviceGroupData._() : super();
+  factory DeviceGroupData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeviceGroupData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ToUpperResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'convertedString')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceGroupData', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'description')
     ..hasRequiredFields = false
   ;
 
@@ -87,40 +109,315 @@ class ToUpperResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ToUpperResponse clone() => ToUpperResponse()..mergeFromMessage(this);
+  DeviceGroupData clone() => DeviceGroupData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ToUpperResponse copyWith(void Function(ToUpperResponse) updates) => super.copyWith((message) => updates(message as ToUpperResponse)) as ToUpperResponse;
+  DeviceGroupData copyWith(void Function(DeviceGroupData) updates) => super.copyWith((message) => updates(message as DeviceGroupData)) as DeviceGroupData;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ToUpperResponse create() => ToUpperResponse._();
-  ToUpperResponse createEmptyInstance() => create();
-  static $pb.PbList<ToUpperResponse> createRepeated() => $pb.PbList<ToUpperResponse>();
+  static DeviceGroupData create() => DeviceGroupData._();
+  DeviceGroupData createEmptyInstance() => create();
+  static $pb.PbList<DeviceGroupData> createRepeated() => $pb.PbList<DeviceGroupData>();
   @$core.pragma('dart2js:noInline')
-  static ToUpperResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ToUpperResponse>(create);
-  static ToUpperResponse? _defaultInstance;
+  static DeviceGroupData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeviceGroupData>(create);
+  static DeviceGroupData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get convertedString => $_getSZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set convertedString($core.String v) { $_setString(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasConvertedString() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearConvertedString() => clearField(1);
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get createdAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set createdAt($1.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedAt() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureCreatedAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => clearField(5);
 }
 
-class DeviceTrackerServiceApi {
-  $pb.RpcClient _client;
-  DeviceTrackerServiceApi(this._client);
+class GetDeviceGroupsResponse extends $pb.GeneratedMessage {
+  factory GetDeviceGroupsResponse({
+    $core.Iterable<DeviceGroupData>? groups,
+  }) {
+    final $result = create();
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
+    return $result;
+  }
+  GetDeviceGroupsResponse._() : super();
+  factory GetDeviceGroupsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDeviceGroupsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  $async.Future<ToUpperResponse> toUpper($pb.ClientContext? ctx, ToUpperRequest request) =>
-    _client.invoke<ToUpperResponse>(ctx, 'DeviceTrackerService', 'ToUpper', request, ToUpperResponse())
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDeviceGroupsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..pc<DeviceGroupData>(1, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: DeviceGroupData.create)
+    ..hasRequiredFields = false
   ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDeviceGroupsResponse clone() => GetDeviceGroupsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDeviceGroupsResponse copyWith(void Function(GetDeviceGroupsResponse) updates) => super.copyWith((message) => updates(message as GetDeviceGroupsResponse)) as GetDeviceGroupsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGroupsResponse create() => GetDeviceGroupsResponse._();
+  GetDeviceGroupsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDeviceGroupsResponse> createRepeated() => $pb.PbList<GetDeviceGroupsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGroupsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDeviceGroupsResponse>(create);
+  static GetDeviceGroupsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<DeviceGroupData> get groups => $_getList(0);
+}
+
+class GetDevicesFromGroupRequest extends $pb.GeneratedMessage {
+  factory GetDevicesFromGroupRequest({
+    $fixnum.Int64? groupId,
+  }) {
+    final $result = create();
+    if (groupId != null) {
+      $result.groupId = groupId;
+    }
+    return $result;
+  }
+  GetDevicesFromGroupRequest._() : super();
+  factory GetDevicesFromGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicesFromGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicesFromGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'groupId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicesFromGroupRequest clone() => GetDevicesFromGroupRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicesFromGroupRequest copyWith(void Function(GetDevicesFromGroupRequest) updates) => super.copyWith((message) => updates(message as GetDevicesFromGroupRequest)) as GetDevicesFromGroupRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesFromGroupRequest create() => GetDevicesFromGroupRequest._();
+  GetDevicesFromGroupRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDevicesFromGroupRequest> createRepeated() => $pb.PbList<GetDevicesFromGroupRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesFromGroupRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicesFromGroupRequest>(create);
+  static GetDevicesFromGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get groupId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set groupId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => clearField(1);
+}
+
+class DeviceData extends $pb.GeneratedMessage {
+  factory DeviceData({
+    $fixnum.Int64? id,
+    $core.String? name,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+    $core.String? description,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    return $result;
+  }
+  DeviceData._() : super();
+  factory DeviceData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeviceData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceData', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeviceData clone() => DeviceData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeviceData copyWith(void Function(DeviceData) updates) => super.copyWith((message) => updates(message as DeviceData)) as DeviceData;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeviceData create() => DeviceData._();
+  DeviceData createEmptyInstance() => create();
+  static $pb.PbList<DeviceData> createRepeated() => $pb.PbList<DeviceData>();
+  @$core.pragma('dart2js:noInline')
+  static DeviceData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeviceData>(create);
+  static DeviceData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get createdAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set createdAt($1.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedAt() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureCreatedAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => clearField(5);
+}
+
+class GetDevicesFromGroupResponse extends $pb.GeneratedMessage {
+  factory GetDevicesFromGroupResponse({
+    $core.Iterable<DeviceData>? devices,
+  }) {
+    final $result = create();
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    return $result;
+  }
+  GetDevicesFromGroupResponse._() : super();
+  factory GetDevicesFromGroupResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicesFromGroupResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicesFromGroupResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'device_tracker'), createEmptyInstance: create)
+    ..pc<DeviceData>(1, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: DeviceData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicesFromGroupResponse clone() => GetDevicesFromGroupResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicesFromGroupResponse copyWith(void Function(GetDevicesFromGroupResponse) updates) => super.copyWith((message) => updates(message as GetDevicesFromGroupResponse)) as GetDevicesFromGroupResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesFromGroupResponse create() => GetDevicesFromGroupResponse._();
+  GetDevicesFromGroupResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDevicesFromGroupResponse> createRepeated() => $pb.PbList<GetDevicesFromGroupResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesFromGroupResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicesFromGroupResponse>(create);
+  static GetDevicesFromGroupResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<DeviceData> get devices => $_getList(0);
 }
 
 

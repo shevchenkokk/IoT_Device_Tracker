@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'widgets/login.dart';
+import 'client/client.dart';
 
-void main() {
-  runApp(App());
+void main() async {
+  var client = Client();
+  runApp(App(client: client));
 }
 
 class App extends StatelessWidget {
+  final Client client;
+
+  App({required this.client});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +20,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.red,
         brightness: Brightness.light
       ),
-      home: LoginPage(),
+      home: LoginPage(client: client),
       debugShowCheckedModeBanner: false,
     );
   }

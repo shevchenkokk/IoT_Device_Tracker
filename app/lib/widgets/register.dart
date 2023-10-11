@@ -31,7 +31,7 @@ class RegisterPage extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Реализуйте здесь логику регистрации и переход на следующий экран
+                  // Здесь логика регистрации и переход на следующую страничку
                 },
                 child: Text('Зарегистрироваться'),
               ),
