@@ -29,6 +29,14 @@ class DeviceTrackerServiceClient extends $grpc.Client {
       '/device_tracker.DeviceTrackerService/GetDevicesFromGroup',
       ($0.GetDevicesFromGroupRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetDevicesFromGroupResponse.fromBuffer(value));
+  static final _$createDeviceGroup = $grpc.ClientMethod<$0.CreateDeviceGroupRequest, $0.CreateDeviceGroupResponse>(
+      '/device_tracker.DeviceTrackerService/CreateDeviceGroup',
+      ($0.CreateDeviceGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.CreateDeviceGroupResponse.fromBuffer(value));
+  static final _$createDevice = $grpc.ClientMethod<$0.CreateDeviceRequest, $0.CreateDeviceResponse>(
+      '/device_tracker.DeviceTrackerService/CreateDevice',
+      ($0.CreateDeviceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.CreateDeviceResponse.fromBuffer(value));
 
   DeviceTrackerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -42,6 +50,14 @@ class DeviceTrackerServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetDevicesFromGroupResponse> getDevicesFromGroup($0.GetDevicesFromGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevicesFromGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDeviceGroupResponse> createDeviceGroup($0.CreateDeviceGroupRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createDeviceGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDeviceResponse> createDevice($0.CreateDeviceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createDevice, request, options: options);
   }
 }
 
@@ -64,6 +80,20 @@ abstract class DeviceTrackerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetDevicesFromGroupRequest.fromBuffer(value),
         ($0.GetDevicesFromGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDeviceGroupRequest, $0.CreateDeviceGroupResponse>(
+        'CreateDeviceGroup',
+        createDeviceGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateDeviceGroupRequest.fromBuffer(value),
+        ($0.CreateDeviceGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDeviceRequest, $0.CreateDeviceResponse>(
+        'CreateDevice',
+        createDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateDeviceRequest.fromBuffer(value),
+        ($0.CreateDeviceResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetDeviceGroupsResponse> getDeviceGroups_Pre($grpc.ServiceCall call, $async.Future<$0.GetDeviceGroupsRequest> request) async {
@@ -74,6 +104,16 @@ abstract class DeviceTrackerServiceBase extends $grpc.Service {
     return getDevicesFromGroup(call, await request);
   }
 
+  $async.Future<$0.CreateDeviceGroupResponse> createDeviceGroup_Pre($grpc.ServiceCall call, $async.Future<$0.CreateDeviceGroupRequest> request) async {
+    return createDeviceGroup(call, await request);
+  }
+
+  $async.Future<$0.CreateDeviceResponse> createDevice_Pre($grpc.ServiceCall call, $async.Future<$0.CreateDeviceRequest> request) async {
+    return createDevice(call, await request);
+  }
+
   $async.Future<$0.GetDeviceGroupsResponse> getDeviceGroups($grpc.ServiceCall call, $0.GetDeviceGroupsRequest request);
   $async.Future<$0.GetDevicesFromGroupResponse> getDevicesFromGroup($grpc.ServiceCall call, $0.GetDevicesFromGroupRequest request);
+  $async.Future<$0.CreateDeviceGroupResponse> createDeviceGroup($grpc.ServiceCall call, $0.CreateDeviceGroupRequest request);
+  $async.Future<$0.CreateDeviceResponse> createDevice($grpc.ServiceCall call, $0.CreateDeviceRequest request);
 }

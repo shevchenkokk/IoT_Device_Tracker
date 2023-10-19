@@ -40,6 +40,7 @@ dependencies:
   protobuf: ^3.1.0
   fixnum: ^1.1.0
   intl: ^0.18.1
+  mqtt_client: ^10.0.0
 
 dev_dependencies:
   flutter_test:

@@ -16,14 +16,11 @@ import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use getDeviceGroupsRequestDescriptor instead')
 const GetDeviceGroupsRequest$json = {
   '1': 'GetDeviceGroupsRequest',
-  '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
-  ],
 };
 
 /// Descriptor for `GetDeviceGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getDeviceGroupsRequestDescriptor = $convert.base64Decode(
-    'ChZHZXREZXZpY2VHcm91cHNSZXF1ZXN0EhcKB3VzZXJfaWQYASABKANSBnVzZXJJZA==');
+    'ChZHZXREZXZpY2VHcm91cHNSZXF1ZXN0');
 
 @$core.Deprecated('Use deviceGroupDataDescriptor instead')
 const DeviceGroupData$json = {
@@ -100,4 +97,60 @@ const GetDevicesFromGroupResponse$json = {
 final $typed_data.Uint8List getDevicesFromGroupResponseDescriptor = $convert.base64Decode(
     'ChtHZXREZXZpY2VzRnJvbUdyb3VwUmVzcG9uc2USNAoHZGV2aWNlcxgBIAMoCzIaLmRldmljZV'
     '90cmFja2VyLkRldmljZURhdGFSB2RldmljZXM=');
+
+@$core.Deprecated('Use createDeviceGroupRequestDescriptor instead')
+const CreateDeviceGroupRequest$json = {
+  '1': 'CreateDeviceGroupRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `CreateDeviceGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDeviceGroupRequestDescriptor = $convert.base64Decode(
+    'ChhDcmVhdGVEZXZpY2VHcm91cFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIWCgZzdGF0dX'
+    'MYAiABKAlSBnN0YXR1cxIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24=');
+
+@$core.Deprecated('Use createDeviceGroupResponseDescriptor instead')
+const CreateDeviceGroupResponse$json = {
+  '1': 'CreateDeviceGroupResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateDeviceGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDeviceGroupResponseDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVEZXZpY2VHcm91cFJlc3BvbnNlEg4KAmlkGAEgASgDUgJpZA==');
+
+@$core.Deprecated('Use createDeviceRequestDescriptor instead')
+const CreateDeviceRequest$json = {
+  '1': 'CreateDeviceRequest',
+  '2': [
+    {'1': 'group_id', '3': 1, '4': 1, '5': 3, '10': 'groupId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `CreateDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDeviceRequestDescriptor = $convert.base64Decode(
+    'ChNDcmVhdGVEZXZpY2VSZXF1ZXN0EhkKCGdyb3VwX2lkGAEgASgDUgdncm91cElkEhIKBG5hbW'
+    'UYAiABKAlSBG5hbWUSFgoGc3RhdHVzGAMgASgJUgZzdGF0dXMSIAoLZGVzY3JpcHRpb24YBCAB'
+    'KAlSC2Rlc2NyaXB0aW9u');
+
+@$core.Deprecated('Use createDeviceResponseDescriptor instead')
+const CreateDeviceResponse$json = {
+  '1': 'CreateDeviceResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDeviceResponseDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVEZXZpY2VSZXNwb25zZRIOCgJpZBgBIAEoA1ICaWQ=');
 
