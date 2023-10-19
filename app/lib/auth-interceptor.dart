@@ -34,7 +34,6 @@ class AuthInterceptor implements ClientInterceptor {
     try {
       final response = await client.login(username, password);
       token = response.accessToken;
-      print(token);
     } on AuthorizationError catch (e) {
       // Handle any errors when refreshing the token.
       print('Failed to refresh access token: $e');
@@ -53,7 +52,7 @@ class AuthInterceptor implements ClientInterceptor {
   }
 
   void _startTokenRefreshBackgroundProcess() {
-    final interval = Duration(seconds: 15);
+    final interval = Duration(minutes: 10);
     tokenRefreshTimer = Timer.periodic(interval, (timer) async {
       refreshToken();
     });
